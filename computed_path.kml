@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Placemark id="3">
+            <name>G02</name>
+            <Point id="2">
+                <coordinates>34.813661167085186,32.16879873393717,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="5">
+            <name>G03</name>
+            <Point id="4">
+                <coordinates>34.81363680491583,32.16880871392561,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="7">
+            <name>G08</name>
+            <Point id="6">
+                <coordinates>34.81367361654552,32.16878423359473,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="9">
+            <name>G10</name>
+            <Point id="8">
+                <coordinates>34.81365696589448,32.16880189011496,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="11">
+            <name>G21</name>
+            <Point id="10">
+                <coordinates>34.81364757114006,32.16882878284915,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="13">
+            <name>G27</name>
+            <Point id="12">
+                <coordinates>34.81369358165829,32.16882545559154,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="15">
+            <name>G28</name>
+            <Point id="14">
+                <coordinates>34.813602748817985,32.168818865654565,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="17">
+            <name>G32</name>
+            <Point id="16">
+                <coordinates>34.813635388604986,32.168811890939615,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="19">
+            <name>G02</name>
+            <Point id="18">
+                <coordinates>34.813645795911526,32.16880743233691,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="21">
+            <name>G03</name>
+            <Point id="20">
+                <coordinates>34.81367477691514,32.16882504029022,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="23">
+            <name>G08</name>
+            <Point id="22">
+                <coordinates>34.8135957353897,32.168802366043714,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="25">
+            <name>G10</name>
+            <Point id="24">
+                <coordinates>34.813604234478774,32.168758999609885,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="27">
+            <name>G21</name>
+            <Point id="26">
+                <coordinates>34.813627662383766,32.16885188434749,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="29">
+            <name>G27</name>
+            <Point id="28">
+                <coordinates>34.81362496259514,32.16881797285058,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="31">
+            <name>G28</name>
+            <Point id="30">
+                <coordinates>34.813625971585786,32.16876031858198,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="33">
+            <name>G32</name>
+            <Point id="32">
+                <coordinates>34.81362316181189,32.16879550687545,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="35">
+            <name>G02</name>
+            <Point id="34">
+                <coordinates>34.813671312948046,32.1688246285188,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="37">
+            <name>G03</name>
+            <Point id="36">
+                <coordinates>34.813724484679575,32.16880731754783,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="39">
+            <name>G08</name>
+            <Point id="38">
+                <coordinates>34.81363855119058,32.16878228136003,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="41">
+            <name>G10</name>
+            <Point id="40">
+                <coordinates>34.813652476753326,32.168834431435,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="43">
+            <name>G21</name>
+            <Point id="42">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="45">
+            <name>G27</name>
+            <Point id="44">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="47">
+            <name>G28</name>
+            <Point id="46">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="49">
+            <name>G32</name>
+            <Point id="48">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="51">
+            <name>G02</name>
+            <Point id="50">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="53">
+            <name>G03</name>
+            <Point id="52">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="55">
+            <name>G08</name>
+            <Point id="54">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="57">
+            <name>G10</name>
+            <Point id="56">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="59">
+            <name>G21</name>
+            <Point id="58">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="61">
+            <name>G27</name>
+            <Point id="60">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="63">
+            <name>G28</name>
+            <Point id="62">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="65">
+            <name>G32</name>
+            <Point id="64">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="67">
+            <name>G02</name>
+            <Point id="66">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="69">
+            <name>G03</name>
+            <Point id="68">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="71">
+            <name>G08</name>
+            <Point id="70">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="73">
+            <name>G10</name>
+            <Point id="72">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="75">
+            <name>G21</name>
+            <Point id="74">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="77">
+            <name>G27</name>
+            <Point id="76">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="79">
+            <name>G28</name>
+            <Point id="78">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="81">
+            <name>G32</name>
+            <Point id="80">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="83">
+            <name>G02</name>
+            <Point id="82">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="85">
+            <name>G03</name>
+            <Point id="84">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="87">
+            <name>G08</name>
+            <Point id="86">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="89">
+            <name>G10</name>
+            <Point id="88">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="91">
+            <name>G21</name>
+            <Point id="90">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="93">
+            <name>G27</name>
+            <Point id="92">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="95">
+            <name>G28</name>
+            <Point id="94">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="97">
+            <name>G32</name>
+            <Point id="96">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="99">
+            <name>G02</name>
+            <Point id="98">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="101">
+            <name>G03</name>
+            <Point id="100">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="103">
+            <name>G08</name>
+            <Point id="102">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="105">
+            <name>G10</name>
+            <Point id="104">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="107">
+            <name>G21</name>
+            <Point id="106">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="109">
+            <name>G27</name>
+            <Point id="108">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="111">
+            <name>G28</name>
+            <Point id="110">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="113">
+            <name>G02</name>
+            <Point id="112">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="115">
+            <name>G03</name>
+            <Point id="114">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="117">
+            <name>G08</name>
+            <Point id="116">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="119">
+            <name>G10</name>
+            <Point id="118">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="121">
+            <name>G21</name>
+            <Point id="120">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="123">
+            <name>G27</name>
+            <Point id="122">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="125">
+            <name>G28</name>
+            <Point id="124">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="127">
+            <name>G02</name>
+            <Point id="126">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="129">
+            <name>G03</name>
+            <Point id="128">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="131">
+            <name>G08</name>
+            <Point id="130">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="133">
+            <name>G10</name>
+            <Point id="132">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="135">
+            <name>G21</name>
+            <Point id="134">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="137">
+            <name>G27</name>
+            <Point id="136">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="139">
+            <name>G28</name>
+            <Point id="138">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="141">
+            <name>G02</name>
+            <Point id="140">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="143">
+            <name>G03</name>
+            <Point id="142">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="145">
+            <name>G08</name>
+            <Point id="144">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="147">
+            <name>G10</name>
+            <Point id="146">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="149">
+            <name>G21</name>
+            <Point id="148">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="151">
+            <name>G27</name>
+            <Point id="150">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="153">
+            <name>G28</name>
+            <Point id="152">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="155">
+            <name>G02</name>
+            <Point id="154">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="157">
+            <name>G03</name>
+            <Point id="156">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="159">
+            <name>G08</name>
+            <Point id="158">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="161">
+            <name>G10</name>
+            <Point id="160">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="163">
+            <name>G21</name>
+            <Point id="162">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="165">
+            <name>G27</name>
+            <Point id="164">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="167">
+            <name>G28</name>
+            <Point id="166">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="169">
+            <name>G32</name>
+            <Point id="168">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="171">
+            <name>G02</name>
+            <Point id="170">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="173">
+            <name>G03</name>
+            <Point id="172">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="175">
+            <name>G08</name>
+            <Point id="174">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="177">
+            <name>G10</name>
+            <Point id="176">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="179">
+            <name>G21</name>
+            <Point id="178">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="181">
+            <name>G27</name>
+            <Point id="180">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="183">
+            <name>G28</name>
+            <Point id="182">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="185">
+            <name>G32</name>
+            <Point id="184">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="187">
+            <name>G02</name>
+            <Point id="186">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="189">
+            <name>G03</name>
+            <Point id="188">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="191">
+            <name>G08</name>
+            <Point id="190">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="193">
+            <name>G10</name>
+            <Point id="192">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="195">
+            <name>G21</name>
+            <Point id="194">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="197">
+            <name>G27</name>
+            <Point id="196">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="199">
+            <name>G28</name>
+            <Point id="198">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="201">
+            <name>G32</name>
+            <Point id="200">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="203">
+            <name>G02</name>
+            <Point id="202">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="205">
+            <name>G03</name>
+            <Point id="204">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="207">
+            <name>G08</name>
+            <Point id="206">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="209">
+            <name>G10</name>
+            <Point id="208">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="211">
+            <name>G21</name>
+            <Point id="210">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="213">
+            <name>G27</name>
+            <Point id="212">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="215">
+            <name>G28</name>
+            <Point id="214">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="217">
+            <name>G32</name>
+            <Point id="216">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="219">
+            <name>G02</name>
+            <Point id="218">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="221">
+            <name>G03</name>
+            <Point id="220">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="223">
+            <name>G08</name>
+            <Point id="222">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="225">
+            <name>G10</name>
+            <Point id="224">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="227">
+            <name>G21</name>
+            <Point id="226">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="229">
+            <name>G27</name>
+            <Point id="228">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="231">
+            <name>G28</name>
+            <Point id="230">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="233">
+            <name>G32</name>
+            <Point id="232">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="235">
+            <name>G02</name>
+            <Point id="234">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="237">
+            <name>G03</name>
+            <Point id="236">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="239">
+            <name>G08</name>
+            <Point id="238">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="241">
+            <name>G10</name>
+            <Point id="240">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="243">
+            <name>G21</name>
+            <Point id="242">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="245">
+            <name>G27</name>
+            <Point id="244">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="247">
+            <name>G28</name>
+            <Point id="246">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="249">
+            <name>G02</name>
+            <Point id="248">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="251">
+            <name>G03</name>
+            <Point id="250">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="253">
+            <name>G08</name>
+            <Point id="252">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="255">
+            <name>G10</name>
+            <Point id="254">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="257">
+            <name>G21</name>
+            <Point id="256">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="259">
+            <name>G27</name>
+            <Point id="258">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="261">
+            <name>G28</name>
+            <Point id="260">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="263">
+            <name>G02</name>
+            <Point id="262">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="265">
+            <name>G03</name>
+            <Point id="264">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="267">
+            <name>G08</name>
+            <Point id="266">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="269">
+            <name>G10</name>
+            <Point id="268">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="271">
+            <name>G21</name>
+            <Point id="270">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="273">
+            <name>G27</name>
+            <Point id="272">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="275">
+            <name>G28</name>
+            <Point id="274">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="277">
+            <name>G02</name>
+            <Point id="276">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="279">
+            <name>G03</name>
+            <Point id="278">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="281">
+            <name>G08</name>
+            <Point id="280">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="283">
+            <name>G10</name>
+            <Point id="282">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="285">
+            <name>G21</name>
+            <Point id="284">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="287">
+            <name>G27</name>
+            <Point id="286">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="289">
+            <name>G28</name>
+            <Point id="288">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="291">
+            <name>G32</name>
+            <Point id="290">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="293">
+            <name>G02</name>
+            <Point id="292">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="295">
+            <name>G03</name>
+            <Point id="294">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="297">
+            <name>G08</name>
+            <Point id="296">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="299">
+            <name>G10</name>
+            <Point id="298">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="301">
+            <name>G21</name>
+            <Point id="300">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="303">
+            <name>G27</name>
+            <Point id="302">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="305">
+            <name>G28</name>
+            <Point id="304">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="307">
+            <name>G32</name>
+            <Point id="306">
+                <coordinates>nan,nan,0.0</coordinates>
+            </Point>
+        </Placemark>
+    </Document>
+</kml>
