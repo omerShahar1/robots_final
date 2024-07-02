@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\outcomes\driving.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\outcomes\walking.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

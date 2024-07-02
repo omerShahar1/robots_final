@@ -13,8 +13,8 @@ gnss_log_samples_dir = 'gnss_log_samples'
 outcomes_dir = 'outcomes'
 
 # Create folders if they don't exist
-os.makedirs(gnss_log_samples_dir, exist_ok=True)
-os.makedirs(outcomes_dir, exist_ok=True)
+os.makedirs('gnss_log_samples', exist_ok=True)
+os.makedirs('outcomes', exist_ok=True)
 
 # Constants for corruption check
 BEIRUT_LAT = 33.82
@@ -384,7 +384,7 @@ def moving_average_filter(df, window_size=5):
 
 
 def main():
-    input_filepath = 'examples/Fixed.txt'
+    input_filepath = 'examples/test5.txt'
     original_gnss_to_position(input_filepath)
 
 
