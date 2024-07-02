@@ -104,7 +104,7 @@ def compute_real_time_location(input_file, output_kml_file, output_csv_file):
         print("Real-time location could not be determined due to insufficient valid data.")
 
 def main():
-    input_file = 'Fixed.csv'
+    input_file = 'outcomes/walking.csv'
     output_kml_file = 'computed_path.kml'
     output_csv_file = 'computed_data.csv'
 

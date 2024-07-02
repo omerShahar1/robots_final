@@ -1,15 +1,20 @@
-import sys, os, csv
+import os, csv
 from datetime import datetime, timezone, timedelta
 import pandas as pd
 import numpy as np
 import navpy
-
-import Utils
 from gnssutils import ephemeris_manager
 import simplekml
 
 LIGHTSPEED = 2.99792458e8
 ephemeris_data_directory = os.path.join('data')
+# Define the folder structure
+gnss_log_samples_dir = 'gnss_log_samples'
+outcomes_dir = 'outcomes'
+
+# Create folders if they don't exist
+os.makedirs(gnss_log_samples_dir, exist_ok=True)
+os.makedirs(outcomes_dir, exist_ok=True)
 
 # Constants for corruption check
 BEIRUT_LAT = 33.82
@@ -28,56 +33,50 @@ def is_corrupted_position(lat, lon):
     return False
 
 
-def least_squares(xs, measured_pseudorange, x0, b0):
+def weighted_least_squares(xs, measured_pseudorange, x0, b0, weights):
     dx = 100 * np.ones(3)
     b = b0
-    # set up the G matrix with the right dimensions. We will later replace the first 3 columns
-    # note that b here is the clock bias in meters equivalent, so the actual clock bias is b/LIGHTSPEED
     G = np.ones((measured_pseudorange.size, 4))
     iterations = 0
+
     while np.linalg.norm(dx) > 1e-3:
-        # Eq. (2):
         r = np.linalg.norm(xs - x0, axis=1)
-        # Eq. (1):
         phat = r + b0
-        # Eq. (3):
         deltaP = measured_pseudorange - phat
+        W = np.diag(weights)  # Weight matrix
         G[:, 0:3] = -(xs - x0) / r[:, None]
-        # Eq. (4):
-        sol = np.linalg.inv(np.transpose(G) @ G) @ np.transpose(G) @ deltaP
-        # Eq. (5):
+
+        # Weighted least squares solution
+        sol = np.linalg.inv(G.T @ W @ G) @ G.T @ W @ deltaP
         dx = sol[0:3]
         db = sol[3]
         x0 = x0 + dx
         b0 = b0 + db
+
     norm_dp = np.linalg.norm(deltaP)
     return x0, b0, norm_dp
 
 
 def positioning_algorithm(csv_file):
-    # Read CSV file
     df = pd.read_csv(csv_file)
     data = []
     df_times = df['GPS time'].unique()
+    x0 = np.array([0, 0, 0])
+    b0 = 0
     for time in df_times:
-        # Extract rows with given GPS time
         df_gps_time = df[df['GPS time'] == time]
-        # Sort data based on 'SatPRN (ID)' column
         df_gps_time_sorted = df_gps_time.sort_values(by='SatPRN (ID)')
-
-        # Extract relevant columns for the algorithm
         xs = df_gps_time_sorted[['Sat.X', 'Sat.Y', 'Sat.Z']].values
         measured_pseudorange = df_gps_time_sorted['Pseudo-Range'].values
-        x0 = np.array([0, 0, 0])  # Initial guess for position
-        b0 = 0  # Initial guess for bias
-        x_estimate, bias_estimate, norm_dp = least_squares(xs, measured_pseudorange, x0, b0)
+        weights = df_gps_time_sorted['CN0'].values  # Use CN0 values as weights
+        x_estimate, bias_estimate, norm_dp = weighted_least_squares(xs, measured_pseudorange, x0, b0, weights)
+        # Update previous estimates for next iteration
+        x0 = x_estimate
+        b0 = bias_estimate
         lla = convertXYZtoLLA(x_estimate)
-        ################# Satellite Corruption identifier ###########################
-        if is_corrupted_position(lla[0], lla[1]):
-            # corrupted_sat_id = df_gps_time_sorted.iloc[0]['SatPRN (ID)']
-            print("Corrupted location noticed at time: " + str(time) + " continue to the next one.")
-        else:
+        if not is_corrupted_position(lla[0], lla[1]):
             data.append([time, x_estimate[0], x_estimate[1], x_estimate[2], lla[0], lla[1], lla[2]])
+
     df_ans = pd.DataFrame(data, columns=["GPS_Unique_Time", "Pos_X", "Pos_Y", "Pos_Z", "Lat", "Lon", "Alt"])
     return df_ans
 
@@ -125,7 +124,7 @@ def ParseToCSV(input_filepath):
     # Convert columns to numeric representation
 
     # Filter by C/N0 (Carrier-to-Noise Density Ratio)
-    min_cn0_threshold = 30  # Example threshold
+    min_cn0_threshold = 30  # CN0 threshold
     measurements['Cn0DbHz'] = pd.to_numeric(measurements['Cn0DbHz'])  # Ensure Cn0DbHz column is numeric
     measurements = measurements[measurements['Cn0DbHz'] >= min_cn0_threshold]
 
@@ -164,7 +163,7 @@ def ParseToCSV(input_filepath):
     # Calculate pseudorange in seconds
     WEEKSEC = 604800
     measurements['tRxGnssNanos'] = measurements['TimeNanos'] + measurements['TimeOffsetNanos'] - (
-            measurements['FullBiasNanos'].iloc[0] + measurements['BiasNanos'].iloc[0])
+                measurements['FullBiasNanos'].iloc[0] + measurements['BiasNanos'].iloc[0])
     measurements['GpsWeekNumber'] = np.floor(1e-9 * measurements['tRxGnssNanos'] / WEEKSEC)
     measurements['tRxSeconds'] = 1e-9 * measurements['tRxGnssNanos'] - WEEKSEC * measurements['GpsWeekNumber']
     measurements['tTxSeconds'] = 1e-9 * (measurements['ReceivedSvTimeNanos'] + measurements['TimeOffsetNanos'])
@@ -183,13 +182,19 @@ def ParseToCSV(input_filepath):
         while num_sats < 5:
             one_epoch = measurements.loc[
                 (measurements['Epoch'] == epoch) & (measurements['prSeconds'] < 0.1)].drop_duplicates(subset='SvName')
+
+            if len(one_epoch) < 2:  # Check if there are at least 2 rows
+                epoch += 1
+                continue
+
             timestamp = one_epoch.iloc[1]['UnixTime'].to_pydatetime(warn=False)
             one_epoch.set_index('SvName', inplace=True)
             num_sats = len(one_epoch.index)
             epoch += 1
 
-        sats = one_epoch.index.unique().tolist()
-        ephemeris = manager.get_ephemeris(timestamp, sats)
+        if len(one_epoch) >= 2:  # Ensure one_epoch is valid before proceeding
+            sats = one_epoch.index.unique().tolist()
+            ephemeris = manager.get_ephemeris(timestamp, sats)
 
         def calculate_satellite_position(ephemeris, transmit_time):
             mu = 3.986005e14
@@ -259,6 +264,12 @@ def ParseToCSV(input_filepath):
         while num_sats < 5:
             one_epoch = measurements.loc[
                 (measurements['Epoch'] == epoch) & (measurements['prSeconds'] < 0.1)].drop_duplicates(subset='SvName')
+
+            # Check if one_epoch is empty
+            if one_epoch.empty:
+                epoch += 1
+                continue
+
             timestamp = one_epoch.iloc[0]['UnixTime'].to_pydatetime(warn=False)
             one_epoch.set_index('SvName', inplace=True)
             num_sats = len(one_epoch.index)
@@ -266,15 +277,16 @@ def ParseToCSV(input_filepath):
 
         CN0 = one_epoch['Cn0DbHz'].tolist()
         pseudo_range = (one_epoch['PrM'] + LIGHTSPEED * sv_position['delT_sv']).to_numpy()
+
         # saving all the above data into csv file
         for i in range(len(Yco)):
             gpsTime[i] = timestamp
             row = [gpsTime[i], satPRN[i], Xco[i], Yco[i], Zco[i], pseudo_range[i], CN0[i]]
             data.append(row)
 
-    file_path = os.path.join(filename + '.csv')
+    output_csv_filepath = os.path.join(outcomes_dir, f"{filename}.csv")
     # Write data to CSV file
-    with open(file_path, 'w', newline='') as csvfile:
+    with open(output_csv_filepath, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
 
         # Write the header
@@ -288,7 +300,8 @@ def ParseToCSV(input_filepath):
 def original_gnss_to_position(input_filepath):
     ParseToCSV(input_filepath)
     filename = os.path.splitext(os.path.basename(input_filepath))[0]
-    input_fpath = filename + '.csv'
+
+    input_fpath = os.path.join(outcomes_dir, filename + '.csv')
 
     # Open the CSV file
     csvfile = open(input_fpath, newline='')
@@ -298,7 +311,8 @@ def original_gnss_to_position(input_filepath):
     if positional_df['Lat'].empty or positional_df['Lon'].empty:
         print("All the satellites are corrupted, deleting csv file.")
         csvfile.close()
-        os.remove("GNSStoPosition.csv")
+        os.remove(input_fpath)
+        return
     else:
         print("Positional Algo succeeded, creating CSV and KML files.")
     existing_df = pd.read_csv(input_fpath)
@@ -308,14 +322,17 @@ def original_gnss_to_position(input_filepath):
     # Create a KML object
     kml = simplekml.Kml()
 
+    df_filtered = moving_average_filter(existing_df)
+
     # Accumulate coordinates for the LineString
     coords = []
 
     # Iterate over the data
-    for index, row in existing_df.iterrows():
+    for index, row in df_filtered.iterrows():
         gps_time = row['GPS_Unique_Time']
 
-        if -100000 < row['Alt'] < 100000:
+        if 0 < row['Alt'] < 1000:
+
             coords.append((row['Lon'], row['Lat'], row['Alt']))
 
             # Create a point placemark
@@ -323,23 +340,53 @@ def original_gnss_to_position(input_filepath):
 
             # Add time information to the placemark
             gps_times = pd.to_datetime(gps_time)
-            pnt.timestamp.when = gps_times.strftime('%Y-%m-%dT%H:%M:%SZ')
+            # Debug print to check the altitude before filtering
+            # print(f"Processing row {index}: Alt={row['Alt']} GPSTime:{gps_time}")
+            if not pd.isna(gps_times):
+                pnt.timestamp.when = gps_times.strftime('%Y-%m-%dT%H:%M:%SZ')
 
     # Create a LineString for the path
     linestring = kml.newlinestring(name="Path", description="GPS Path")
     linestring.coords = coords
     linestring.altitudemode = simplekml.AltitudeMode.relativetoground  # Adjust altitude mode as needed
-    # Set style for the LineString (optional)
+
     linestring.style.linestyle.color = simplekml.Color.red  # Change color to red
     linestring.style.linestyle.width = 3  # Change width if needed
 
     # Specify the path for saving the KML file
-    output_path = os.path.join(filename + '.kml')
-
+    # output_path = os.path.join(filename + '.kml')
+    output_kml_filepath = os.path.join(outcomes_dir, filename + '.kml')
     # Save the KML file
-    kml.save(output_path)
+    kml.save(output_kml_filepath)
 
 
-input_filepath = "examples/Fixed.txt"
-original_gnss_to_position(input_filepath)
-Utils.main()
+# Added for mor accuracy creating the kml.
+def moving_average_filter(df, window_size=5):
+    # Ensure that Alt values are non-negative before applying the filter
+    # df = df[df['Alt'] >= 0].copy()
+
+    df['Pos_X'] = df['Pos_X'].rolling(window=window_size, min_periods=1).mean()
+    df['Pos_Y'] = df['Pos_Y'].rolling(window=window_size, min_periods=1).mean()
+    df['Pos_Z'] = df['Pos_Z'].rolling(window=window_size, min_periods=1).mean()
+    df['Lat'] = df['Lat'].rolling(window=window_size, min_periods=1).mean()
+    df['Lon'] = df['Lon'].rolling(window=window_size, min_periods=1).mean()
+    df['Alt'] = df['Alt'].rolling(window=window_size, min_periods=1).mean()
+
+    rolling_avg_alt = df['Alt'].rolling(window=window_size, min_periods=1).mean()
+
+    # Calculate the absolute difference from rolling average
+    diff_from_avg = np.abs(df['Alt'] - rolling_avg_alt)
+
+    # Replace values in 'Alt' column with -100000 where difference is large
+    df.loc[diff_from_avg > 50, 'Alt'] = -100000
+
+    return df
+
+
+def main():
+    input_filepath = 'examples/Fixed.txt'
+    original_gnss_to_position(input_filepath)
+
+
+if __name__ == "__main__":
+    main()
