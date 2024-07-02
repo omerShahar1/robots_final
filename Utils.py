@@ -103,10 +103,12 @@ def compute_real_time_location(input_file, output_kml_file, output_csv_file):
     else:
         print("Real-time location could not be determined due to insufficient valid data.")
 
+def main():
+    input_file = 'Fixed.csv'
+    output_kml_file = 'computed_path.kml'
+    output_csv_file = 'computed_data.csv'
 
-# Example usage
-input_file = 'Fixed.csv'
-output_kml_file = 'computed_path.kml'
-output_csv_file = 'computed_data.csv'
+    compute_real_time_location(input_file, output_kml_file, output_csv_file)
 
-compute_real_time_location(input_file, output_kml_file, output_csv_file)
+main()
+

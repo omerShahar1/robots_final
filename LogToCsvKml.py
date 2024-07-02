@@ -3,13 +3,10 @@ from datetime import datetime, timezone, timedelta
 import pandas as pd
 import numpy as np
 import navpy
+
+import Utils
 from gnssutils import ephemeris_manager
 import simplekml
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
-import subprocess
-import webbrowser
-import re
 
 LIGHTSPEED = 2.99792458e8
 ephemeris_data_directory = os.path.join('data')
@@ -343,17 +340,6 @@ def original_gnss_to_position(input_filepath):
     kml.save(output_path)
 
 
-while True:
-    choice = input("Choose mode (1 for original GNSS to position, 2 for live positioning): ").strip()
-    if choice == '1':
-        input_filepath = "examples/Fixed.txt"
-        original_gnss_to_position(input_filepath)
-
-    elif choice == '2':
-        print("test")
-    else:
-        print("Invalid choice. Exiting.")
-
-    again = input("Do you want to continue for another run? (1 for yes, 2 for no): ").strip()
-    if again == '2':
-        break
+input_filepath = "examples/Fixed.txt"
+original_gnss_to_position(input_filepath)
+Utils.main()
